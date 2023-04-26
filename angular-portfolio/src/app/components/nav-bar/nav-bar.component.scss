@@ -1,0 +1,17 @@
+.navbar-container {
+  padding: 2rem 3rem;
+
+  .navbar-right{
+    .social {
+      a.social-linkedin{
+        color: #007bb6;
+      }
+      a.social-whatsapp {
+        color: #075e54;
+      }
+      a.social-github {
+        color: #444444;
+      }
+    }
+  }
+}
