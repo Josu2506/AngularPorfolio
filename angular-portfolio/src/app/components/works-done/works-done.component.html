@@ -9,5 +9,6 @@
 </div>
 <app-work *ngFor="let workDataParent of workList"
   [workData]="workDataParent"
+  (workEdit)="editWorkToList($event)"
   (workRemove)="removeWorkToList($event)">
 </app-work>

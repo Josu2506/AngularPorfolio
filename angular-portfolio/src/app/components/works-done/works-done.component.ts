@@ -43,4 +43,9 @@ export class WorksDoneComponent implements OnInit {
     this.workListService.remove(worksToRemove.id).subscribe();
     this.getWorkList();
   }
+
+  editWorkToList(worksToEdit: WorkModel): void {
+    this.workListService.put(worksToEdit.id).subscribe();
+    this.getWorkList();
+  }
 }

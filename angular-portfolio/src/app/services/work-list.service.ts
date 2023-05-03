@@ -59,4 +59,10 @@ export class WorkListService {
       catchError(this.handleError<WorkModel>('deleteWork'))
     );
   }
+
+  put(id: number): Observable<WorkModel[]>{
+    return this.http.put<WorkModel[]>(this.worksUrl, this.httpOptions).pipe(
+      catchError(this.handleError<WorkModel[]>('UpdateWork'))
+    );
+  }
 }
