@@ -45,8 +45,18 @@ export class WorkListService {
 
   add(workAdd: WorkModel){
     return this.http.post<WorkModel>(this.worksUrl, workAdd, this.httpOptions).pipe(
-      tap((newWork: WorkModel) => console.log(newWork.title)),
+      // tap((newWork: WorkModel) => console.log(newWork.title)),
       catchError(this.handleError<WorkModel>('addWork'))
+    );
+  }
+
+
+  remove(id: number): Observable<WorkModel>{
+    const url = `${this.worksUrl}/${id}`;
+
+    return this.http.delete<WorkModel>(url, this.httpOptions).pipe(
+      tap(() => console.log(`deleted work id=${id}`)),
+      catchError(this.handleError<WorkModel>('deleteWork'))
     );
   }
 }
